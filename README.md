@@ -93,12 +93,11 @@ Steps:
 
 
 
-## Founding Members
+## Founding Member
 [![](https://github.com/shreeramiyer.png?size=50)](https://github.com/shreeramiyer)
-
 ## Lead Maintainer
 [![](https://github.com/GHub4Naveen.png?size=50)](https://github.com/GHub4Naveen)
-## Core Mainteiners
+## Core Maintainers
 [![](https://github.com/dltk-ai.png?size=50)](https://github.com/dltk-ai)
 ## Core Contributers 
 [![](https://github.com/SivaramVeluri15.png?size=50)](https://github.com/SivaramVeluri15)
