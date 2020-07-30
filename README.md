@@ -109,6 +109,5 @@ Steps:
 [![](https://github.com/thomasbinish.png?size=50)](https://github.com/thomasbinish)
 [![](https://github.com/kavyavelagapudi252.png?size=50)](https://github.com/kavyavelagapudi252)
 
-
 ## License
 The content of this project itself is licensed under [GNU LGPL, Version 2.1 (LGPL-2.1)](https://github.com/dltk-ai/Natural-Language-Processing/blob/master/LICENSE)
