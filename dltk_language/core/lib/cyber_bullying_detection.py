@@ -1,6 +1,7 @@
 import nltk
 import pickle
 nltk.download('stopwords')
+from core.lib.lib import sentiment
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import re
@@ -76,18 +77,30 @@ def detect(text):
     data = pad_sequences(data, maxlen=maxlen, padding='post')
     print('padded-seq',data)
     model=load_model('resources/Cyber_bullying-LSTM-multi-class')
-    pred=model.predict(data)
-    print(pred)
+    params={}
+    params['text']=text
+    res=sentiment(params)
+    comment_state=res['emotion']
+    tagged_words=res['text'].split(':')[1]
+    sample='no discernable type'
+    if res['emotion']=='NEGATIVE':
+        print(res)
+        pred=model.predict(data)
+        print(pred)
     #print(model.summary())
-    dt=tokenizer.word_index
-    print(pred)
-    print(np.argmax(pred))
-    sample='nothing detected'
-    if np.argmax(pred)==1:
-        sample='racism'
-    elif np.argmax(pred)==2:
-        sample='sexism'
-    else: 
-        print("not detected")
-    return sample
+        #dt=tokenizer.word_index
+        print(pred)
+        print(np.argmax(pred))
+        sample=''
+        if np.argmax(pred)==1:
+            sample='racism'
+        elif np.argmax(pred)==2:
+            sample='sexism'
+        else:
+            print("not detected")
+    dt={}
+    dt['state']=comment_state
+    dt['tagged_words']=tagged_words
+    dt['cyber_bullying_type']=sample
+    return dt
     #print(dt['screw'])
