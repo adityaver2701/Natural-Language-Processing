@@ -22,7 +22,7 @@ cycler==0.10.0
 cymem==2.0.2
 decorator==4.4.2
 defusedxml==0.6.0
-Django==2.1
+Django==2.2.13
 docutils==0.15.2
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz
 entrypoints==0.3
