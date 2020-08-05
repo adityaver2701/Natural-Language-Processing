@@ -14,6 +14,12 @@ DLTK NLP allows you to analyze text to collect data from content such as ideas, 
 
 **Dependency Parser (dependency-parser)**: Dependency Parser represents the Grammatical Structure of the Sentence.
 
+**Sarcasm Detection**: Analyses the sarcasm of the text and returns if it falls under sarcastic or non sarcastic.
+
+**Cyber Bullying Detection**: Analyses the text and returns if it falls under racism or sexism.
+
+**Tags Recommender** : It provides programming related tags for a piece of text.
+
 ## Try out DLTK NLP [Demo](https://dltk.ai/nlp/).
 
 ## Motivation
@@ -25,6 +31,8 @@ This Repository is created to showcase how Natural Language Processing is used t
 [NLTK](https://www.nltk.org/): Leading open-source platform for natural language processing.
 
 [SpaCy](https://spacy.io/): Open-source software library for advanced natural language processing.
+
+[keras](https://keras.io/): Keras is an open-source neural-network library written in Python. It is capable of running on top of TensorFlow.
 
 ## How to use?
 **Option-1**: Executing ***dltk-language-core*** as a service. 
@@ -57,7 +65,7 @@ This Repository is created to showcase how Natural Language Processing is used t
     "text":"For QubitAI Company, Shreeram Iyer is the CEO"
 }'`
 
-**Part-of-Speech Tagging:**
+**Part-of-Speech Tagging API:**
 `curl --location --request POST 'http://0.0.0.0:8189/dltk-language/nlp/pos/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -69,6 +77,27 @@ This Repository is created to showcase how Natural Language Processing is used t
 --header 'Content-Type: application/json' \
 --data-raw '{
     "text":"DLTK is a good open source platform"
+}'`
+
+**Sarcasm Detection API**
+`curl --location --request POST 'http://0.0.0.0:8189/dltk-language/nlp/sarcasm_detection/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text":"rolling on the floor laughing"
+}'`
+
+**Cyber Bullying Detection API**
+`curl --location --request POST 'http://12.1.2.160:8189/dltk-language/nlp/cyber_bullying_detection/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text":"Some racist statement here"
+}'`
+
+**Tags Recommender API**
+`curl --location --request POST 'http://12.1.2.160:8189/dltk-language/nlp/tags_recommender/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text" : "I want to query a MySQL table. How to query?"
 }'`
 
 **Option-2**: Executing ***dltk-language-core*** as a docker container.
