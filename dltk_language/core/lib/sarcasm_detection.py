@@ -6,9 +6,11 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import re
+import keras
 import numpy as np
 import os
 import string
+import tensorflow as tf
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
@@ -81,7 +83,7 @@ def detect(text):
     print('tokenized data-',data)
     data = sequence.pad_sequences(data, maxlen)
     print('pad sequences data-',data)
-    model=load_model(os.path.join('resources/sarcasm_word2vec'))
+    model= tf.keras.models.load_model('resources/sarcasm_word2vec.h5')
     pred=model.predict(data)
     print('Printing Predictions')
     print(pred)
