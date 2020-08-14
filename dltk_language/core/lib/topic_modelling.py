@@ -1,13 +1,7 @@
 import re
-import pickle
-import pandas as pd
-import io
-from io import StringIO
-from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-import pandas as pd
 import numpy as np
-import mglearn
 import pyLDAvis
 import pyLDAvis.sklearn
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
@@ -34,14 +28,11 @@ def get_topics(topics, feature_names, sorting, topics_per_chunk=5,
         these_topics = topics[i: i + topics_per_chunk]
         # maybe we have less than topics_per_chunk left
         len_this_chunk = len(these_topics)
-        # print topic headers
-        print(("topic {:<3}" * len_this_chunk).format(*these_topics))
-        print(("-------- {0:<2}" * len_this_chunk).format(""))
         # print top n_words frequent words
         for i in range(n_words):
             try:
                 topic_name = (("{:<5}" * len_this_chunk).format(*feature_names[sorting[these_topics, i]]))
-                response[f'topic{i}'].append(topic_name)
+                response['topic'+str(i)].append(topic_name)
                
             except:
                 pass
