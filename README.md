@@ -20,6 +20,8 @@ DLTK NLP allows you to analyze text to collect data from content such as ideas, 
 
 **Tags Recommender** : It provides programming related tags for a piece of text.
 
+**Topic Modelling** : A topic model is a type of statistical model for discovering the abstract "topics" that occur in a collection of documents.
+
 ## Try out DLTK NLP [Demo](https://dltk.ai/nlp/).
 
 ## Motivation
@@ -32,7 +34,7 @@ This Repository is created to showcase how Natural Language Processing is used t
 
 [SpaCy](https://spacy.io/): Open-source software library for advanced natural language processing.
 
-[keras](https://keras.io/): Keras is an open-source neural-network library written in Python. It is capable of running on top of TensorFlow.
+[Keras](https://keras.io/): Keras is an open-source neural-network library written in Python. It is capable of running on top of TensorFlow.
 
 ## How to use?
 **Option-1**: Executing ***dltk-language-core*** as a service. 
@@ -98,6 +100,13 @@ This Repository is created to showcase how Natural Language Processing is used t
 --header 'Content-Type: application/json' \
 --data-raw '{
     "text" : "I want to query a MySQL table. How to query?"
+}'`
+
+**Topic Modelling API**
+`curl --location --request POST 'http://12.1.2.160:8189/dltk-language/nlp/topic_modelling/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text":"Django is a high-level Python framework. It is free and open-source, written in Python itself, and follows the model-view-template architectural pattern. We can use it to develop quality web applications faster and easier."
 }'`
 
 **Option-2**: Executing ***dltk-language-core*** as a docker container.
