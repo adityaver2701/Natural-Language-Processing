@@ -5,6 +5,8 @@ from core.controller.sarcasm_detection_controller import sarcasm_detection_contr
 from core.controller.tags_recommender_controller import tags_recommender_controller
 from core.controller.topic_modelling_controller import topic_modelling_controller
 from core.controller.text_summarization_controller import text_summarization_controller
+from core.controller.text_generation_controller import text_generation_controller
+
 urlpatterns = [
         url(r'^pos/$', pos, name='pos_tagger'),
         url(r'ner/$', ner, name='ner_tagger'),
@@ -15,5 +17,6 @@ urlpatterns = [
         url(r'^sarcasm_detection/$', sarcasm_detection_controller, name='sarcasm_detection_controller'),
         url(r'^tags_recommender/$', tags_recommender_controller, name='tags_recommender_controller'),
 	url(r'^topic_modelling/$', topic_modelling_controller, name='topic_modelling_controller'),
-	url(r'^text_summarization/$', text_summarization_controller, name='text_summarization_controller')
+	url(r'^text_summarization/$', text_summarization_controller, name='text_summarization_controller'),
+        url(r'^text_generation/$', text_generation_controller, name='text_generation_controller')
         ]
