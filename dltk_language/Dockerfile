@@ -1,7 +1,7 @@
 # The first instruction is what image we want to base our container on
 # We Use an official Python runtime as a parent image
 
-FROM python:3.5
+FROM python:3.6
 
 RUN apt-get update
 
@@ -30,3 +30,5 @@ RUN pip install -r requirements.txt
 RUN python -m spacy download en_core_web_sm
 
 RUN python nltk_downloads.py
+
+RUN pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
